@@ -1,0 +1,217 @@
+fileFormatVersion: 2
+guid: 298b465553136f94e9a356327bb2dd2e
+timeCreated: 1473591329
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: run_0000_herorun_0001_run_anim_001.png_0
+    21300002: run_0000_herorun_0001_run_anim_001.png_1
+    21300004: run_0000_herorun_0001_run_anim_001.png_2
+    21300006: run_0000_herorun_0001_run_anim_001.png_3
+    21300008: run_0000_herorun_0001_run_anim_001.png_4
+    21300010: run_0000_herorun_0001_run_anim_001.png_5
+    21300012: run_0000_herorun_0001_run_anim_001.png_6
+    21300014: run_0000_herorun_0001_run_anim_001.png_7
+    21300016: run_0000_herorun_0001_run_anim_001.png_8
+    21300018: run_0000_herorun_0001_run_anim_001.png_9
+    21300020: run_0000_herorun_0001_run_anim_001.png_10
+    21300022: run_0000_herorun_0001_run_anim_001.png_11
+    21300024: run_0000_herorun_0001_run_anim_001.png_12
+    21300026: run_0000_herorun_0001_run_anim_001.png_13
+    21300028: run_0000_herorun_0001_run_anim_001.png_14
+    21300030: run_0000_herorun_0001_run_anim_001.png_15
+    21300032: run_0000_herorun_0001_run_anim_001.png_16
+    21300034: run_0000_herorun_0001_run_anim_001.png_17
+    21300036: run_0000_herorun_0001_run_anim_001.png_18
+    21300038: run_0000_herorun_0001_run_anim_001.png_19
+    21300040: run_0000_herorun_0001_run_anim_001.png_20
+    21300042: run_0000_herorun_0001_run_anim_001.png_21
+    21300044: run_0000_herorun_0001_run_anim_001.png_22
+    21300046: run_0000_herorun_0001_run_anim_001.png_23
+    21300048: run_0000_herorun_0001_run_anim_001.png_24
+    21300050: run_0000_herorun_0001_run_anim_001.png_25
+    21300052: run_0000_herorun_0001_run_anim_001.png_26
+    21300054: run_0000_herorun_0001_run_anim_001.png_27
+    21300056: run_0000_herorun_0001_run_anim_001.png_28
+    21300058: run_0000_herorun_0001_run_anim_001.png_29
+    21300060: run_0000_herorun_0001_run_anim_001.png_30
+    21300062: run_0000_herorun_0001_run_anim_001.png_31
+    21300064: run_0000_herorun_0001_run_anim_001.png_32
+    21300066: run_0000_herorun_0001_run_anim_001.png_33
+    21300068: run_0000_herorun_0001_run_anim_001.png_34
+    21300070: run_0000_herorun_0001_run_anim_001.png_35
+    21300072: run_0000_herorun_0001_run_anim_001.png_36
+    21300074: run_0000_herorun_0001_run_anim_001.png_37
+    21300076: run_0000_herorun_0001_run_anim_001.png_38
+    21300078: run_0000_herorun_0001_run_anim_001.png_39
+    21300080: run_0000_herorun_0001_run_anim_001.png_40
+    21300082: run_0000_herorun_0001_run_anim_001.png_41
+    21300084: run_0000_herorun_0001_run_anim_001.png_42
+    21300086: run_0000_herorun_0001_run_anim_001.png_43
+    21300088: run_0000_herorun_0001_run_anim_001.png_44
+    21300090: run_0000_herorun_0001_run_anim_001.png_45
+    21300092: run_0000_herorun_0001_run_anim_001.png_46
+    21300094: run_0000_herorun_0001_run_anim_001.png_47
+    21300096: run_0000_herorun_0001_run_anim_001.png_48
+    21300098: run_0000_herorun_0001_run_anim_001.png_49
+    21300100: run_0000_herorun_0001_run_anim_001.png_50
+    21300102: run_0000_herorun_0001_run_anim_001.png_51
+    21300104: run_0000_herorun_0001_run_anim_001.png_52
+    21300106: run_0000_herorun_0001_run_anim_001.png_53
+    21300108: run_0000_herorun_0001_run_anim_001.png_54
+    21300110: run_0000_herorun_0001_run_anim_001.png_55
+    21300112: run_0000_herorun_0001_run_anim_001.png_56
+    21300114: run_0000_herorun_0001_run_anim_001.png_57
+    21300116: run_0000_herorun_0001_run_anim_001.png_58
+    21300118: run_0000_herorun_0001_run_anim_001.png_59
+    21300120: run_0000_herorun_0001_run_anim_001.png_60
+    21300122: run_0000_herorun_0001_run_anim_001.png_61
+    21300124: run_0000_herorun_0001_run_anim_001.png_62
+    21300126: run_0000_herorun_0001_run_anim_001.png_63
+    21300128: run_0000_herorun_0001_run_anim_001.png_64
+    21300130: run_0000_herorun_0001_run_anim_001.png_65
+    21300132: run_0000_herorun_0001_run_anim_001.png_66
+    21300134: run_0000_herorun_0001_run_anim_001.png_67
+    21300136: run_0000_herorun_0001_run_anim_001.png_68
+    21300138: run_0000_herorun_0001_run_anim_001.png_69
+    21300140: run_0000_herorun_0001_run_anim_001.png_70
+    21300142: run_0000_herorun_0001_run_anim_001.png_71
+    21300144: run_0000_herorun_0001_run_anim_001.png_72
+    21300146: run_0000_herorun_0001_run_anim_001.png_73
+    21300148: run_0000_herorun_0001_run_anim_001.png_74
+    21300150: run_0000_herorun_0001_run_anim_001.png_75
+    21300152: run_0000_herorun_0001_run_anim_001.png_76
+    21300154: run_0000_herorun_0001_run_anim_001.png_77
+    21300156: run_0000_herorun_0001_run_anim_001.png_78
+    21300158: run_0000_herorun_0001_run_anim_001.png_79
+    21300160: run_0000_herorun_0001_run_anim_001.png_80
+    21300162: run_0000_herorun_0001_run_anim_001.png_81
+    21300164: run_0000_herorun_0001_run_anim_001.png_82
+    21300166: run_0000_herorun_0001_run_anim_001.png_83
+    21300168: run_0000_herorun_0001_run_anim_001.png_84
+    21300170: run_0000_herorun_0001_run_anim_001.png_85
+    21300172: run_0000_herorun_0001_run_anim_001.png_86
+    21300174: run_0000_herorun_0001_run_anim_001.png_87
+    21300176: run_0000_herorun_0001_run_anim_001.png_88
+    21300178: run_0000_herorun_0001_run_anim_001.png_89
+    21300180: run_0000_herorun_0001_run_anim_001.png_90
+    21300182: run_0000_herorun_0001_run_anim_001.png_91
+    21300184: run_0000_herorun_0001_run_anim_001.png_92
+    21300186: run_0000_herorun_0001_run_anim_001.png_93
+    21300188: run_0000_herorun_0001_run_anim_001.png_94
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 7
+  spritePivot: {x: 0.5, y: 0}
+  spriteBorder: {x: 381, y: 97, z: 429, w: 347}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: run_0000_herorun_0001_run_anim_001.png_0
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 100
+        width: 724
+        height: 601
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline:
+    - - {x: 0, y: 524}
+      - {x: 95.87992, y: 519.8681}
+      - {x: 190.24777, y: 507.53757}
+      - {x: 281.6153, y: 487.20288}
+      - {x: 368.5416, y: 459.1847}
+      - {x: 449.6557, y: 423.9249}
+      - {x: 523.6785, y: 381.97955}
+      - {x: 589.4426, y: 334.01016}
+      - {x: 645.9109, y: 280.77322}
+      - {x: 692.19275, y: 223.10829}
+      - {x: 727.5582, y: 161.92484}
+      - {x: 751.44977, y: 98.187706}
+      - {x: 763.4904, y: 32.9021}
+      - {x: 763.4904, y: -32.902393}
+      - {x: 751.4497, y: -98.187996}
+      - {x: 727.5581, y: -161.92511}
+      - {x: 692.19257, y: -223.10852}
+      - {x: 645.9107, y: -280.7734}
+      - {x: 589.4424, y: -334.01035}
+      - {x: 523.6783, y: -381.97974}
+      - {x: 449.6554, y: -423.92508}
+      - {x: 368.54114, y: -459.18484}
+      - {x: 281.6148, y: -487.203}
+      - {x: 190.24724, y: -507.53766}
+      - {x: 95.87936, y: -519.86816}
+      - {x: -0.0006140491, y: -524}
+      - {x: -95.88058, y: -519.86804}
+      - {x: -190.24844, y: -507.53745}
+      - {x: -281.61597, y: -487.2027}
+      - {x: -368.54224, y: -459.18445}
+      - {x: -449.6564, y: -423.92456}
+      - {x: -523.67914, y: -381.97916}
+      - {x: -589.44324, y: -334.0097}
+      - {x: -645.9114, y: -280.7727}
+      - {x: -692.1931, y: -223.10776}
+      - {x: -727.55853, y: -161.92426}
+      - {x: -751.44995, y: -98.1871}
+      - {x: -763.4905, y: -32.90149}
+      - {x: -763.49036, y: 32.903004}
+      - {x: -751.4495, y: 98.18859}
+      - {x: -727.55786, y: 161.92569}
+      - {x: -692.19214, y: 223.10913}
+      - {x: -645.91016, y: 280.774}
+      - {x: -589.44183, y: 334.01086}
+      - {x: -523.67755, y: 381.98022}
+      - {x: -449.65457, y: 423.92548}
+      - {x: -368.5403, y: 459.18518}
+      - {x: -281.61392, y: 487.20325}
+      - {x: -190.24629, y: 507.53784}
+      - {x: -95.87839, y: 519.8682}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
