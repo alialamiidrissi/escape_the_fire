@@ -3,11 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class ObjectPool : MonoBehaviour {
-    private List<GameObject> pool;
-    private int poolSize;
+    protected List<GameObject> pool;
+    protected int poolSize;
     public GameObject original_obj;
     // Use this for initialization
-    void Start() {
+   protected virtual void Start() {
         poolSize = 5;
         pool = new List<GameObject>();
         for (int i = 0; i < poolSize; i++) {
@@ -16,7 +16,7 @@ public class ObjectPool : MonoBehaviour {
 
     }
 
-    public GameObject getObject()
+    public  GameObject getObject()
     {
         for (int i = 0; i < poolSize; i++)
         {
@@ -27,7 +27,7 @@ public class ObjectPool : MonoBehaviour {
         return createObject();
 
     }
-    private GameObject createObject()
+    protected GameObject createObject()
     {
         GameObject obj =(GameObject) Instantiate(original_obj);
         obj.SetActive(false);
