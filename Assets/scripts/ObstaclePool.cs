@@ -11,7 +11,7 @@ public class ObstaclePool : ObjectPool
         base.Start();
     }
 
-    public void enableObstacle(GameObject obstacle)
+    public override void enableObject(GameObject obstacle)
     {
         bool enable = true;
         foreach (GameObject activeObstacle in activeObstacles)
@@ -27,7 +27,7 @@ public class ObstaclePool : ObjectPool
     }
 
 
-    public void disableObstacle(GameObject obstacle)
+    public static  void disableObject(GameObject obstacle)
     {
         obstacle.SetActive(false);
         activeObstacles.Remove(obstacle);

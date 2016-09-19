@@ -7,8 +7,7 @@ public class ObjectPool : MonoBehaviour {
     protected int poolSize;
     public GameObject original_obj;
     // Use this for initialization
-   protected virtual void Start() {
-        poolSize = 5;
+    protected virtual void Start() {
         pool = new List<GameObject>();
         for (int i = 0; i < poolSize; i++) {
             createObject();
@@ -16,7 +15,7 @@ public class ObjectPool : MonoBehaviour {
 
     }
 
-    public  GameObject getObject()
+    public GameObject getObject()
     {
         for (int i = 0; i < poolSize; i++)
         {
@@ -25,13 +24,18 @@ public class ObjectPool : MonoBehaviour {
         }
         poolSize++;
         return createObject();
-
     }
     protected GameObject createObject()
     {
-        GameObject obj =(GameObject) Instantiate(original_obj);
+        GameObject obj = (GameObject)Instantiate(original_obj);
         obj.SetActive(false);
         pool.Add(obj);
         return obj;
     }
+    public virtual void enableObject(GameObject obstacle)
+    {
+        obstacle.SetActive(true);
+    }
+
 }
+

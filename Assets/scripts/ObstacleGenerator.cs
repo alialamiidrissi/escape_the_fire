@@ -35,8 +35,8 @@ public class ObstacleGenerator : MonoBehaviour {
 	    if(Time.time-startTime >= delay)
         {
             GameObject obstacle = obstacle_one_pool.getObject();
-            obstacle.transform.position = new Vector3(player.transform.position.x+ distoPlayer, 1.5f, obstacle.transform.position.z);
-            obstacle_one_pool.enableObstacle(obstacle);
+            obstacle.transform.position = new Vector3(player.transform.position.x+ distoPlayer, -1f, obstacle.transform.position.z);
+            obstacle_one_pool.enableObject(obstacle);
             startTime = Time.time;
             delay = Random.Range(minTime, maxTime);
             distoPlayer = Random.Range(minDist, maxDist);

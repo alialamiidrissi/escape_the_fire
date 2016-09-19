@@ -11,9 +11,18 @@ public class Destroyer : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void  Update()
     {
         if (transform.position.x < destructionPoint.transform.position.x)
+        {
+            disable();  
+        }
+    }
+
+    protected virtual void disable()
+    {
+        
             gameObject.SetActive(false);
+
     }
 }

@@ -27,12 +27,17 @@ public class PlayerController : MonoBehaviour
         {
             if (isOnGround)
             {
-                rb.velocity = new Vector2(rb.velocity.y, jumpForce);
-                print("enter");
+                rb.AddForce(transform.up * jumpForce);
             }
         }
         myAnimator.SetFloat("speed",rb.velocity.x);
         myAnimator.SetBool("onGround", isOnGround);
 
     }
+    void OnCollisionEnter2D(Collision2D coll)
+    {
+        print(coll.gameObject.name);
+
+    }
+
 }
