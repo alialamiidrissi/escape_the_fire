@@ -10,12 +10,11 @@ public class CoinGenerator : MonoBehaviour {
         nbCoins = Random.Range(1, 3);
 	}
 	
-	// Update is called once per frame
-	public void createCoins(Vector3 positionT)
+	public void createCoins(Vector3 positionT,bool addCentral)
     {
-        createCoin(new Vector3(positionT.x, positionT.y + 1f, positionT.z));
-        if (nbCoins >= 2)
-            createCoin(new Vector3(positionT.x - 1.5f, positionT.y + 1f, positionT.z));
+        createCoin(new Vector3(positionT.x - 1.5f, positionT.y + 1f, positionT.z));
+        if (nbCoins >= 2 && addCentral)
+            createCoin(new Vector3(positionT.x, positionT.y + 1f, positionT.z));
         if (nbCoins == 3)
             createCoin(new Vector3(positionT.x + 1.5f, positionT.y + 1f, positionT.z));
         nbCoins= Random.Range(1, 3);

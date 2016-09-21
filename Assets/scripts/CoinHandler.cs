@@ -7,7 +7,6 @@ public class CoinHandler : MonoBehaviour {
 
    void OnCollisionEnter2D(Collision2D coll)
     {
-            print("entered");
             gameObject.SetActive(false);
     }
 }
