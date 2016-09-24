@@ -1,15 +1,15 @@
 1- Solve plateform size problem --DONE
-2- Set regular obstacles( block)
--- set slide touch
+2- Set regular obstacles( block) -- DONE
+-- set slide touch -- DONE
 
 3- Set coin and coin collect --DONE
-4- randomize coin+
+4- randomize coin -- Done
 -- randomize plateform --DONE but can be improved
-5- Set 2nd type of obstacles (fire on ground)
-6- Set Score
+5- Set 2nd type of obstacles (fire on ground) -- Partially Done
+6- Set Score -- Partially Done
 --SpeedUp
-7- Set life points
-8- set life coins 
+7- Set life points --Partialy Done
+8- set life coins
 9- Define death rules...
 10- Set menus
 11- set Fire balls to avoid

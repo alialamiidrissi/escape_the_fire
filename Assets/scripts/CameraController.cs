@@ -11,6 +11,7 @@ public class CameraController : MonoBehaviour {
 	void Start () {
         player = FindObjectOfType<PlayerController>();
         lastpos = player.transform.position;
+
 	}
 	
 	// Update is called once per frame

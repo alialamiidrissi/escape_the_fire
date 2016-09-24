@@ -5,34 +5,45 @@ public class ObstacleGeneratorAlt : MonoBehaviour
 {
     public ObjectPool obstacle_one;
     public ObjectPool obstacle_two;
+    public int firePlaceprobability;
     public ObjectPool firePlace;
     public int flipProbability;
     private bool flip;
+    private float startTime;
+
     void Start()
     {
         flip = false;
+        startTime = Time.time;
     }
     public bool createObstacle(Vector3 pos)
     {
         GameObject obstacle;
         bool toRet;
-        if (!flip)
+        if (Random.Range(0, 100) <= firePlaceprobability && Time.time-startTime>=15f)
         {
-            print(flip);
-            obstacle = obstacle_one.getObject();
+            obstacle = firePlace.getObject();
             toRet = false;
         }
         else
         {
-            obstacle = obstacle_two.getObject();
-            obstacle.transform.position = new Vector3(pos.x, obstacle.transform.position.y, obstacle.transform.position.z);
-            toRet = true;
+            if (!flip)
+            {
+                obstacle = obstacle_one.getObject();
+                toRet = false;
+            }
+            else
+            {
+                obstacle = obstacle_two.getObject();
+                toRet = true;
+            }
+            if (Random.Range(0, 100) <= flipProbability)
+            {
+                flip = !flip;
+            }
         }
+        obstacle.transform.position = new Vector3(pos.x, obstacle.transform.position.y, obstacle.transform.position.z);
         obstacle.SetActive(true);
-        if (Random.Range(0, 100) <= flipProbability)
-        {
-            flip = !flip;
-        }
         return toRet;
     }
 }
