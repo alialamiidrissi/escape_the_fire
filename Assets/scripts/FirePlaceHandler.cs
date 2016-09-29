@@ -18,9 +18,12 @@ public class FirePlaceHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (gameObject.GetComponent<SpriteRenderer>().sprite.bounds.Intersects(player.gameObject.GetComponent<BoxCollider2D>().bounds))
-            lifePoints.decreaseLifePoint(malusPerSecond * Time.deltaTime);
+        //if (gameObject.GetComponent<SpriteRenderer>().sprite.bounds.Intersects(player.gameObject.GetComponent<BoxCollider2D>().bounds))
+          //  lifePoints.decreaseLifePoint(malusPerSecond * Time.deltaTime);
 
     }
-
+    void OnTriggerEnter2D()
+    {
+        lifePoints.decreaseLifePoint(malusPerSecond * Time.deltaTime);
+    }
 }

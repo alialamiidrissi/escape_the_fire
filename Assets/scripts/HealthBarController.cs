@@ -8,6 +8,7 @@ public Texture frameTexture;
  
 public int healthWidth = 199;
 public int healthHeight = 30;
+private int initialHealthWidth = 180;
  
 public int healthMarginLeft = 41;
 public int healthMarginTop  = 38;
@@ -29,4 +30,9 @@ void OnGUI()
     GUI.DrawTexture(new Rect(frameMarginLeft, frameMarginTop, frameMarginLeft + frameWidth, frameMarginTop + frameHeight), frameTexture, ScaleMode.ScaleToFit, true, 0);
 
 }
+
+public int getInitialHealthWidth()
+    {
+        return initialHealthWidth;
+    }
 }

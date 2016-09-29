@@ -20,7 +20,7 @@ public class ObstacleGeneratorAlt : MonoBehaviour
     {
         GameObject obstacle;
         bool toRet;
-        if (Random.Range(0, 100) < firePlaceprobability && Time.time-startTime>=15f)
+        if (Random.Range(0, 100) < firePlaceprobability && Time.time-startTime>=2f)
         {
             obstacle = firePlace.getObject();
             toRet = false;

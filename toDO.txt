@@ -17,3 +17,6 @@
 -- set coins that slow down the game
 13- Set destroy obstacle superPower
 14- Set destroying auto-destroying plateforms(plateforms that get destroyed while we are on them)
+
+Leslie:
+10

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ScoreLPManager : MonoBehaviour
 {
@@ -8,12 +9,15 @@ public class ScoreLPManager : MonoBehaviour
     private int score;
     private int highScore;
     public Text scoreDisp;
+    private HealthBarController healthBarController;
     // Use this for initialization
     void Start()
     {
         lifePoints = 100;
         score = 0;
         highScore = 0;
+
+        healthBarController = FindObjectOfType<HealthBarController>();
     }
 
     // Update is called once per frame
@@ -47,7 +51,14 @@ public class ScoreLPManager : MonoBehaviour
     public void decreaseLifePoint(float amount)
     {
         if (lifePoints - amount > 0f)
+        {
             lifePoints -= amount;
+            healthBarController.healthWidth = (int)(lifePoints/100*healthBarController.getInitialHealthWidth());
+        }
+        else
+        {
+            SceneManager.LoadScene(0);
+        }
     }
     public void increaseLifePoints(float amount)
     {
@@ -55,5 +66,6 @@ public class ScoreLPManager : MonoBehaviour
             lifePoints += amount;
         else
             lifePoints = 100f;
+        healthBarController.healthWidth = (int)(lifePoints / 100 * healthBarController.getInitialHealthWidth());
     }
 }
