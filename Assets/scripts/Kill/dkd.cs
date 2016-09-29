@@ -1,8 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityEngine.SceneManagement;
 
-public class PlayerController : MonoBehaviour
+public class PlayerdiijdycijsoyController : MonoBehaviour
 {
     public float moveSpeed;
     public float jumpForce;
@@ -12,6 +11,7 @@ public class PlayerController : MonoBehaviour
     private bool isOnGround, slide;
     private Animator myAnimator;
     public GameManager theGameMangager;
+
     // Use this for initialization
     void Start()
     {
@@ -48,7 +48,7 @@ public class PlayerController : MonoBehaviour
     {
         if (coll.gameObject.tag == "killBox")
         { //Catcher object at the bottom with Tag killBox
-            SceneManager.LoadScene(0);
+            theGameMangager.RestartGame();
         }
     }
     void UpdateCollider()

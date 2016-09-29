@@ -1,11 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
-public class scoreLPManager : MonoBehaviour
+public class ScoreLPManager : MonoBehaviour
 {
     private float lifePoints;
     private int score;
     private int highScore;
+    public Text scoreDisp;
     // Use this for initialization
     void Start()
     {
@@ -18,6 +20,7 @@ public class scoreLPManager : MonoBehaviour
     void Update()
     {
         highScore = Mathf.Max(score, highScore);
+        scoreDisp.text = score.ToString();
     }
 
     public float LifePoints

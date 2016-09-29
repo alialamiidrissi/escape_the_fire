@@ -9,8 +9,9 @@ public class CoinGenerator : MonoBehaviour {
     void Start () {
         nbCoins = Random.Range(1, 3);
 	}
-	
-	public void createCoins(Vector3 positionT,bool addCentral)
+
+
+    public void createCoins(Vector3 positionT,bool addCentral)
     {
         createCoin(new Vector3(positionT.x - 1.5f, positionT.y + 1f, positionT.z));
         if (nbCoins >= 2 && addCentral)

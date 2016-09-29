@@ -6,11 +6,11 @@ public class FirePlaceHandler : MonoBehaviour
 
     private PlayerController player;
     public float malusPerSecond;
-    private scoreLPManager lifePoints;
+    private ScoreLPManager lifePoints;
     // Use this for initialization
     void Start()
     {
-        lifePoints = FindObjectOfType<scoreLPManager>();
+        lifePoints = FindObjectOfType<ScoreLPManager>();
         player = FindObjectOfType<PlayerController>();
 
     }

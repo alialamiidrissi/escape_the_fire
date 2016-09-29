@@ -6,6 +6,7 @@ public class CameraController : MonoBehaviour {
 
     private Vector3 lastpos;
     private float dx;
+    public float shift;
 
 	// Use this for initialization
 	void Start () {

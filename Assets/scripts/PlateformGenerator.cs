@@ -15,6 +15,7 @@ public class PlateformGenerator : MonoBehaviour
     public int coinsDistributionProbability;
     public int obstacleDistributionProbability;
     private bool addCentral;
+    private float startTime;
     // Use this for initialization
     public float gap;
     void Start()
@@ -23,12 +24,18 @@ public class PlateformGenerator : MonoBehaviour
         Instantiate(plateform, transform.position, transform.rotation);
         counter = 1;
         addCentral = true;
+        startTime = Time.time;
     }
 
     // Update is called once per frame
     void Update()
     {
         addCentral = true;
+        if (Time.time - startTime > 10f)
+        {
+            useGaps = true;
+            gapCounter = Random.Range(3, 10);
+        }
         if (transform.position.x < genPoint.position.x)
         {
             float x = (counter == 0) ? transform.position.x + platformWidth + gap : transform.position.x + platformWidth;
@@ -50,5 +57,10 @@ public class PlateformGenerator : MonoBehaviour
             plateform_pool.enableObject(obj);
 
         }
+    }
+    void restart()
+    {
+        startTime = Time.time;
+        useGaps = false;
     }
 }
