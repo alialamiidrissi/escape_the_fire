@@ -3,47 +3,38 @@ using System.Collections;
 
 public class ObstacleGeneratorAlt : MonoBehaviour
 {
-    public ObjectPool obstacle_one;
-    public ObjectPool obstacle_two;
-    public int firePlaceprobability;
-    public ObjectPool firePlace;
-    public int flipProbability;
-    private bool flip;
-    private float startTime;
+    /*  public ObjectPool obstacle_one;
+      public ObjectPool obstacle_two;
+      public ObjectPool fireBlastsPool;
+      public ObjectPool firePlace;
+      public int firePlaceprobability;
+      public int fireBlastProbability;
+      private bool flip;
 
+      */
+    public int flipProbability;
+    
+    private float startTime;
+    public ObjectPool[] objectPools;
+    public float[] Probabiltydistribution;
     void Start()
     {
-        flip = false;
         startTime = Time.time;
     }
     public bool createObstacle(Vector3 pos)
     {
         GameObject obstacle;
-        bool toRet;
-        if (Random.Range(0, 100) < firePlaceprobability && Time.time-startTime>=15f)
-        {
-            obstacle = firePlace.getObject();
-            toRet = false;
-        }
-        else
-        {
-            if (!flip)
-            {
-                obstacle = obstacle_one.getObject();
-                toRet = false;
-            }
-            else
-            {
-                obstacle = obstacle_two.getObject();
-                toRet = true;
-            }
-            if (Random.Range(0, 100) <= flipProbability)
-            {
-                flip = !flip;
-            }
-        }
+        float timeA = Time.time - startTime;
+        int index = Utilities.choose(Probabiltydistribution);
+        if((index == 2 && timeA < 5f) || (index == 3 && timeA < 5f) )
+            index = chooseSimple();
+        obstacle = objectPools[index].getObject();
         obstacle.transform.position = new Vector3(pos.x, obstacle.transform.position.y, obstacle.transform.position.z);
         obstacle.SetActive(true);
-        return toRet;
+        return index == 2;
+    }
+    public int chooseSimple()
+    {
+        return Random.Range(0, 100) < flipProbability ? 0 : 1;
     }
 }

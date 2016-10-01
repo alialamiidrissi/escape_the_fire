@@ -9,8 +9,8 @@
 6- Set Score -- Partially Done
 --SpeedUp
 7- Set life points --Partialy Done
-8- set life coins
-9- Define death rules...
+8- set life coins -- Done
+9- Define death rules -- Done 
 10- Set menus
 11- set Fire balls to avoid
 12- Set moving obstacles

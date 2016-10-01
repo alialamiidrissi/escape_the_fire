@@ -1,0 +1,90 @@
+public bool createObstacle(Vector3 pos)
+    {
+        ObjectPool obstacle;
+        bool toRet;
+        int random = Random.Range(0, 100);
+        if (Random.Range(0, 100) < firePlaceprobability && Time.time-startTime>=15f)
+        {
+            obstacle = firePlace.getObject();
+            toRet = false;
+        }
+        else
+        {
+            if (!flip)
+            {
+                obstacle = obstacle_one.getObject();
+                toRet = false;
+            }
+            else
+            {
+                obstacle = obstacle_two.getObject();
+                toRet = true;
+            }
+            if (Random.Range(0, 100) <= flipProbability)
+            {
+                flip = !flip;
+            }
+        }
+        obstacle.transform.position = new Vector3(pos.x, obstacle.transform.position.y, obstacle.transform.position.z);
+        obstacle.SetActive(true);
+        return toRet;
+    }
+
+
+
+using UnityEngine;
+using System.Collections;
+
+public class ObstacleGeneratorAlt : MonoBehaviour
+{
+    public ObjectPool obstacle_one;
+    public ObjectPool obstacle_two;
+    public ObjectPool fireBlastsPool;
+    public ObjectPool firePlace;
+    public int firePlaceprobability;
+    public int flipProbability;
+    private bool flip;
+    public int fireBlastProbability;
+    private float startTime;
+    public ObjectPool[] objectPools;
+    public float[] Probabiltydistribution;
+    void Start()
+    {
+        flip = false;
+        startTime = Time.time;
+    }
+    public bool createObstacle(Vector3 pos)
+    {
+        GameObject obstacle;
+        ObjectPool pool;
+        bool toRet;
+        int random = Random.Range(0, 100);
+        int index = Utilities.choose(Probabiltydistribution);
+        if (Random.Range(0, 100) < firePlaceprobability && Time.time-startTime>=15f)
+        {
+            obstacle = firePlace.getObject();
+            toRet = false;
+        }
+        else
+        {
+            if (!flip)
+            {
+                obstacle = obstacle_one.getObject();
+                toRet = false;
+            }
+            else
+            {
+                obstacle = obstacle_two.getObject();
+                toRet = true;
+            }
+            if (Random.Range(0, 100) <= flipProbability)
+            {
+                flip = !flip;
+            }
+        }
+        obstacle.transform.position = new Vector3(pos.x, obstacle.transform.position.y, obstacle.transform.position.z);
+        obstacle.SetActive(true);
+        return toRet;
+    }
+    
+}

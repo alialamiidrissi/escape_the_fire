@@ -2,12 +2,12 @@
 using System.Collections;
 
 public class killer : MonoBehaviour {
-    private CameraController camera;
+    private CameraController cameraD;
     public float translate; 
 
 	// Use this for initialization
 	void Start () {
-        camera = FindObjectOfType<CameraController>();
+        cameraD = FindObjectOfType<CameraController>();
 	}
 	
 	// Update is called once per frame
@@ -15,22 +15,13 @@ public class killer : MonoBehaviour {
 	
 	}
 
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        Collider2D collider = collision.collider;
+    void OnCollisionEnter2D(Collision2D coll)
+    {    
+        if (coll.gameObject.name == "player")
+        {
+            cameraD.shift += translate * Time.deltaTime;
+            cameraD.transform.position = new Vector3(cameraD.transform.position.x + translate * Time.deltaTime, cameraD.transform.position.y, cameraD.transform.position.z);
+        }
 
-        //if (collider.gameObject.name == "player"){
-            Vector3 contactPoint = collision.contacts[0].point;
-            Vector3 center = collider.bounds.center;
-
-            bool left = contactPoint.x < center.x;
-            bool top = contactPoint.y > center.y;
-
-           // if(!top && left){
-            print("in");
-                camera.shift += translate * Time.deltaTime;
-                camera.transform.position = new Vector3(camera.transform.position.x + translate * Time.deltaTime, camera.transform.position.y, camera.transform.position.z);
-            //}
-        //}
     }
 }

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ScoreLPManager : MonoBehaviour
 {
@@ -48,6 +49,8 @@ public class ScoreLPManager : MonoBehaviour
     {
         if (lifePoints - amount > 0f)
             lifePoints -= amount;
+        else
+            SceneManager.LoadScene(0);
     }
     public void increaseLifePoints(float amount)
     {

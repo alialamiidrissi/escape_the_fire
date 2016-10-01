@@ -8,10 +8,12 @@ public class PlayerController : MonoBehaviour
     public float jumpForce;
     private Rigidbody2D rb;
     public LayerMask myLayer;
+    public float val;
     private BoxCollider2D myCollider;
     private bool isOnGround, slide;
     private Animator myAnimator;
     public GameManager theGameMangager;
+    public Transform groundCheck;
     // Use this for initialization
     void Start()
     {
@@ -25,7 +27,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
 
-        isOnGround = Physics2D.IsTouchingLayers(myCollider, myLayer);
+        isOnGround = Physics2D.OverlapCircle(groundCheck.position, val, myLayer);
         rb.velocity = new Vector2(moveSpeed, rb.velocity.y);
 
 
@@ -44,10 +46,11 @@ public class PlayerController : MonoBehaviour
         myAnimator.SetBool("slide", slide);
 
     }
-    void OnCollisionEnter2D(Collision2D coll)
+    void OnTriggerEnter2D(Collider2D coll)
     {
         if (coll.gameObject.tag == "killBox")
         { //Catcher object at the bottom with Tag killBox
+
             SceneManager.LoadScene(0);
         }
     }
