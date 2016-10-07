@@ -9,7 +9,9 @@ public class ScoreLPManager : MonoBehaviour
     private int score;
     private int highScore;
     public Text scoreDisp;
+    public GameObject screen;
     private HealthBarController healthBarController;
+    public GameObject player;
     // Use this for initialization
     void Start()
     {
@@ -57,7 +59,7 @@ public class ScoreLPManager : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene(0);
+            Utilities.pauseOrDie(player, screen,"You lost all your life points !");
         }
     }
     public void increaseLifePoints(float amount)

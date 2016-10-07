@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     private float hitCount;
     public bool attack;
     public GameObject arrow;
+    public GameObject gameOver;
 
     public GameObject hitBar;
     // Use this for initialization
@@ -47,12 +48,12 @@ public class PlayerController : MonoBehaviour
             if (isOnGround && !slide)
             {
                 rb.AddForce(transform.up * 8.5f, ForceMode2D.Impulse);
-               // rb.AddForce(transform.up * jumpForce);
+                // rb.AddForce(transform.up * jumpForce);
 
             }
         }
         slide = Input.GetKey(KeyCode.DownArrow);
-        if(Input.GetKeyDown(KeyCode.DownArrow) && !isOnGround)
+        if (Input.GetKeyDown(KeyCode.DownArrow) && !isOnGround)
         {
             rb.AddForce(transform.up * -50);
         }
@@ -64,7 +65,7 @@ public class PlayerController : MonoBehaviour
         myAnimator.SetBool("onGround", isOnGround && isOnGround);
         myAnimator.SetBool("slide", slide);
         myAnimator.SetBool("attack", attack);
-        if(transform.position.x > speedMilestoneCount)
+        if (transform.position.x > speedMilestoneCount)
         {
             speedMilestoneCount += speedIncreaseMilestone;
             speedIncreaseMilestone = speedIncreaseMilestone * speedFactor;
@@ -76,8 +77,13 @@ public class PlayerController : MonoBehaviour
     {
         if (coll.gameObject.tag == "killBox")
         { //Catcher object at the bottom with Tag killBox
+            string reason = null;
+            if (coll.gameObject.name == "killLeft")
+                reason = "You got caught by the fire !";
+            else
+                reason = "You fall into a ditch !";
+           Utilities.pauseOrDie(gameObject, gameOver,reason);
 
-            SceneManager.LoadScene(0);
         }
     }
     void UpdateCollider()
@@ -89,20 +95,20 @@ public class PlayerController : MonoBehaviour
     {
         hitCount = 5;
         hitBar.transform.localScale = new Vector3(5, hitBar.transform.localScale.y, transform.localScale.z);
-        hitBar.transform.position = new Vector3(transform.position.x,hitBar.transform.position.y,hitBar.transform.position.z);
+        hitBar.transform.position = new Vector3(transform.position.x, hitBar.transform.position.y, hitBar.transform.position.z);
         hitBar.SetActive(true);
     }
     bool updatehitCount()
     {
         float count = hitCount - Time.deltaTime;
-       if (count > 0)
+        if (count > 0)
         {
             hitCount = count;
             hitBar.transform.localScale = new Vector3(count, hitBar.transform.localScale.y, transform.localScale.z);
-            hitBar.transform.localPosition = new Vector3(hitBar.transform.localPosition.x-Time.deltaTime / 2f, hitBar.transform.localPosition.y, hitBar.transform.localPosition.z);
+            hitBar.transform.localPosition = new Vector3(hitBar.transform.localPosition.x - Time.deltaTime / 2f, hitBar.transform.localPosition.y, hitBar.transform.localPosition.z);
             return true;
         }
-       else
+        else
         {
             hitCount = 0;
             hitBar.SetActive(false);
