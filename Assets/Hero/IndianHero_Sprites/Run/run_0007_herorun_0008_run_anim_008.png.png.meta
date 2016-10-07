@@ -1,10 +1,11 @@
 fileFormatVersion: 2
 guid: b6bc278db927a47a89e1ee00e6967016
-timeCreated: 1473591436
+timeCreated: 1475785085
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: run_0007_herorun_0008_run_anim_008.png_0
+    21300002: run_0007_herorun_0008_run_anim_008.png_1
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -63,6 +64,19 @@ TextureImporter:
         height: 684
       alignment: 7
       pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: run_0007_herorun_0008_run_anim_008.png_1
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 602
+        width: 181
+        height: 167
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0

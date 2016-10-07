@@ -2,31 +2,52 @@
 
 public class HealthBarController : MonoBehaviour
 {
-public Texture backgroundTexture ;
-public Texture foregroundTexture;
-public Texture frameTexture;
- 
-public int healthWidth = 199;
-public int healthHeight = 30;
- 
-public int healthMarginLeft = 41;
-public int healthMarginTop  = 38;
- 
-public int frameWidth = 266;
-public int frameHeight = 65;
- 
-public int frameMarginLeft  = 10;
-public int frameMarginTop = 10;
+    public Texture backgroundTexture;
+    public Texture foregroundTexture;
+    public Texture frameTexture;
 
+    public int healthWidth ;
+    public int healthHeight;
+    private int initialHealthWidth ;
 
-void OnGUI()
-{
+    public int healthMarginLeft ;
+    public int healthMarginTop;
 
-    GUI.DrawTexture(new Rect(frameMarginLeft, frameMarginTop, frameMarginLeft + frameWidth, frameMarginTop + frameHeight), backgroundTexture, ScaleMode.ScaleToFit, true, 0);
+    public int frameWidth ;
+    public int frameHeight;
 
-    GUI.DrawTexture(new Rect(healthMarginLeft, healthMarginTop, healthWidth , healthHeight), foregroundTexture, ScaleMode.ScaleAndCrop, true, 0);
+    public int frameMarginLeft ;
+    public int frameMarginTop ;
 
-    GUI.DrawTexture(new Rect(frameMarginLeft, frameMarginTop, frameMarginLeft + frameWidth, frameMarginTop + frameHeight), frameTexture, ScaleMode.ScaleToFit, true, 0);
+    void Start()
+    {
+     healthWidth = (134 * Screen.width) / 1061;
+     healthHeight = 22 * Screen.height / 597;
+     initialHealthWidth= (134 * Screen.width) / 1061;
 
-}
+        healthMarginLeft = 853 * Screen.width / 1061;
+     healthMarginTop = 30 * Screen.height / 597;
+
+     frameWidth = 217 * Screen.width / 1061;
+     frameHeight = 55 * Screen.height / 597;
+
+     frameMarginLeft = 540 * Screen.width / 1061;
+     frameMarginTop = 5 * Screen.height / 597;
+
+    }
+    void OnGUI()
+    {
+
+        GUI.DrawTexture(new Rect(frameMarginLeft, frameMarginTop, frameMarginLeft + frameWidth, frameMarginTop + frameHeight), backgroundTexture, ScaleMode.ScaleToFit, true, 0);
+
+        GUI.DrawTexture(new Rect(healthMarginLeft, healthMarginTop, healthWidth, healthHeight), foregroundTexture, ScaleMode.ScaleAndCrop, true, 0);
+
+        GUI.DrawTexture(new Rect(frameMarginLeft, frameMarginTop, frameMarginLeft + frameWidth, frameMarginTop + frameHeight), frameTexture, ScaleMode.ScaleToFit, true, 0);
+
+    }
+
+    public int getInitialHealthWidth()
+    {
+        return initialHealthWidth;
+    }
 }

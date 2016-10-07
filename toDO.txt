@@ -5,15 +5,19 @@
 3- Set coin and coin collect --DONE
 4- randomize coin -- Done
 -- randomize plateform --DONE but can be improved
-5- Set 2nd type of obstacles (fire on ground) -- Partially Done
-6- Set Score -- Partially Done
---SpeedUp
-7- Set life points --Partialy Done
+5- Set 2nd type of obstacles (fire on ground) -- Done
+6- Set Score --  Done
+--SpeedUp  -- DOne
+7- Set life points --Done
 8- set life coins -- Done
 9- Define death rules -- Done 
 10- Set menus
-11- set Fire balls to avoid
+11- set Fire balls to avoid -- Done
 12- Set moving obstacles
--- set coins that slow down the game
-13- Set destroy obstacle superPower
+-- set coins that slow down the game -- Done
+13- Set destroy obstacle superPower -- Done
+14- Set destroying auto-destroying plateforms(plateforms that get destroyed while we are on them)
+
+
+10- Set menus
 14- Set destroying auto-destroying plateforms(plateforms that get destroyed while we are on them)

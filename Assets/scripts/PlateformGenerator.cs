@@ -18,6 +18,7 @@ public class PlateformGenerator : MonoBehaviour
     private float startTime;
     // Use this for initialization
     public float gap;
+    private float delay;
     void Start()
     {
         platformWidth = ((plateform.GetComponent<BoxCollider2D>().size.x) - 0.05f);
@@ -25,11 +26,17 @@ public class PlateformGenerator : MonoBehaviour
         counter = 1;
         addCentral = true;
         startTime = Time.time;
+        delay = 5;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (Time.time - startTime > delay && obstacleDistributionProbability< 40)
+        {
+            obstacleDistributionProbability += 5;
+            delay *= 1.5f;
+        }
         addCentral = true;
         if (Time.time - startTime > 10f)
         {
