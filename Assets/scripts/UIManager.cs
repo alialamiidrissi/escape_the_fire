@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class UIManager : MonoBehaviour {
 
     public static bool paused = false;
+    public GameObject pauseMenu;
 	// Use this for initialization
 	void Start () {
 	
@@ -16,11 +17,24 @@ public class UIManager : MonoBehaviour {
 	}
 
     public void LoadLevel(string level){
-		SceneManager.LoadScene(level);
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(level);
         UIManager.paused = false;
 	}
     public void quit()
     {
         Application.Quit();
     }
+    public  void pauseGame()
+    {
+        Time.timeScale = 0f;
+        pauseMenu.SetActive(true);
+        paused = true;
+    }
+    public void resumeGame()
+    {
+        Time.timeScale = 1f;
+        pauseMenu.SetActive(false);
+    }
+
 }

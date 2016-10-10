@@ -59,7 +59,7 @@ public class ScoreLPManager : MonoBehaviour
         }
         else
         {
-            Utilities.pauseOrDie(player, screen,"You lost all your life points !");
+            Utilities.pauseOrDie(player, screen,"You lost all your life \npoints !");
         }
     }
     public void increaseLifePoints(float amount)

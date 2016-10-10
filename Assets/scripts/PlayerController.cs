@@ -5,11 +5,16 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed;
+    private bool updated;
     public float jumpForce;
+    public float initHitCount;
     private Rigidbody2D rb;
     public LayerMask myLayer;
     public float val;
+    public UIManager ui;
     private bool isOnGround, slide;
+    public float timeElapsed;
+    public const float limit = 1f;
     private Animator myAnimator;
     public GameManager theGameMangager;
     private float speedMilestoneCount;
@@ -20,36 +25,59 @@ public class PlayerController : MonoBehaviour
     public bool attack;
     public GameObject arrow;
     public GameObject gameOver;
-
+    private bool doubleJump;
+    private SpriteRenderer playerColor;
+    Color start = new Color(1, 1, 1, 1);
+    Color end = new Color(1, 120f / 255f, 120f / 255f, 1);
     public GameObject hitBar;
+    public ScoreLPManager score;
     // Use this for initialization
     void Start()
     {
-        print(Screen.width + " " + Screen.height);
+        //print(Screen.width + " " + Screen.height);
         rb = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
         slide = false;
         speedMilestoneCount = speedIncreaseMilestone;
         hitCount = 0;
+        doubleJump = false;
+        playerColor = gameObject.GetComponent<SpriteRenderer>();
+        timeElapsed = 1f;
+        updated = false;
+
     }
     public float HitCount { get; private set; }
     // Update is called once per frame
     void Update()
     {
-
+        if (Input.GetKeyDown(KeyCode.Escape))
+            ui.pauseGame();
         isOnGround = Physics2D.OverlapCircle(groundCheck.position, val, myLayer);
         rb.velocity = new Vector2(moveSpeed, rb.velocity.y);
+        if (isOnGround)
+            doubleJump = false;
         if (transform.position.y > 0.5)
             arrow.SetActive(true);
         else
             arrow.SetActive(false);
+
+        ChangeColor();
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            if (isOnGround && !slide)
+            if (!slide)
             {
-                rb.AddForce(transform.up * 8.5f, ForceMode2D.Impulse);
-                // rb.AddForce(transform.up * jumpForce);
+                if (isOnGround)
+                {
+                    rb.AddForce(transform.up * 8.5f, ForceMode2D.Impulse);
+                    // rb.AddForce(transform.up * jumpForce);
 
+
+                }
+                else if (!doubleJump)
+                {
+                    rb.AddForce(transform.up * 3.5f, ForceMode2D.Impulse);
+                    doubleJump = true;
+                }
             }
         }
         slide = Input.GetKey(KeyCode.DownArrow);
@@ -57,16 +85,19 @@ public class PlayerController : MonoBehaviour
         {
             rb.AddForce(transform.up * -50);
         }
-
-        bool updated = updatehitCount();
+        bool key = Input.GetKey(KeyCode.A);
+        if(key)
+            updated = updatehitCount();
         attack = Input.GetKey(KeyCode.A) && updated;
         UpdateCollider();
         myAnimator.SetFloat("speed", rb.velocity.x);
         myAnimator.SetBool("onGround", isOnGround && isOnGround);
         myAnimator.SetBool("slide", slide);
         myAnimator.SetBool("attack", attack);
-        if (transform.position.x > speedMilestoneCount)
-        {
+        myAnimator.SetBool("hitMode", hitCount>0);
+        if (transform.position.x > speedMilestoneCount )
+        {   if (score.Score < 380 && moveSpeed > 10.5)
+                speedMilestoneCount = transform.position.x;
             speedMilestoneCount += speedIncreaseMilestone;
             speedIncreaseMilestone = speedIncreaseMilestone * speedFactor;
             moveSpeed *= speedFactor;
@@ -82,7 +113,7 @@ public class PlayerController : MonoBehaviour
                 reason = "You got caught by the fire !";
             else
                 reason = "You fall into a ditch !";
-           Utilities.pauseOrDie(gameObject, gameOver,reason);
+            Utilities.pauseOrDie(gameObject, gameOver, reason);
 
         }
     }
@@ -93,7 +124,7 @@ public class PlayerController : MonoBehaviour
     }
     public void startHitCounter()
     {
-        hitCount = 5;
+        hitCount = initHitCount;
         hitBar.transform.localScale = new Vector3(5, hitBar.transform.localScale.y, transform.localScale.z);
         hitBar.transform.position = new Vector3(transform.position.x, hitBar.transform.position.y, hitBar.transform.position.z);
         hitBar.SetActive(true);
@@ -104,8 +135,9 @@ public class PlayerController : MonoBehaviour
         if (count > 0)
         {
             hitCount = count;
-            hitBar.transform.localScale = new Vector3(count, hitBar.transform.localScale.y, transform.localScale.z);
-            hitBar.transform.localPosition = new Vector3(hitBar.transform.localPosition.x - Time.deltaTime / 2f, hitBar.transform.localPosition.y, hitBar.transform.localPosition.z);
+            float d = Time.deltaTime * 5f / initHitCount;
+            hitBar.transform.localScale = new Vector3(count* 5f / initHitCount, hitBar.transform.localScale.y, transform.localScale.z);
+            hitBar.transform.localPosition = new Vector3(hitBar.transform.localPosition.x - d/2f, hitBar.transform.localPosition.y, hitBar.transform.localPosition.z);
             return true;
         }
         else
@@ -115,5 +147,24 @@ public class PlayerController : MonoBehaviour
             return false;
         }
     }
+    private void ChangeColor()
+    {
+        if (timeElapsed < limit)
+        {
+            timeElapsed += Time.deltaTime;
+            if (timeElapsed < limit / 2)
+            {
+                float t = 2 * timeElapsed / (limit);
+                playerColor.color = Color.Lerp(start, end, t);
+            }
+            else
+            {
 
+                float t = 2 * timeElapsed / limit - 1f;
+                playerColor.color = Color.Lerp(end, start, t);
+            }
+
+        }
+
+    }
 }

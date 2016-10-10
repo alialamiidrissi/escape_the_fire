@@ -32,6 +32,7 @@ public class FirePlaceHandler : MonoBehaviour
         if (coll.gameObject.name == "player")
         {
             lifePoints.decreaseLifePoint(malusPerSecond * Time.deltaTime);
+            player.timeElapsed = player.timeElapsed >= PlayerController.limit ? 0 : player.timeElapsed;
             fireDanger.enabled = (true);
         }
     }

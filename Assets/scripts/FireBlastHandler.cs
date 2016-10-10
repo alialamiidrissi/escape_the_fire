@@ -19,7 +19,7 @@ public class FireBlastHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        print(UIManager.paused);
+       // print(UIManager.paused);
         if (!UIManager.paused)
             transform.Translate(new Vector3(speed, 0, 0));
         float distance = transform.position.x - player.gameObject.transform.position.x;
@@ -32,8 +32,11 @@ public class FireBlastHandler : MonoBehaviour
     {
         if (coll.gameObject.name == "player")
         {
-            lifepoints.decreaseLifePoint(20);
-            //player.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 400f));
+            if (!player.attack)
+            {
+                lifepoints.decreaseLifePoint(20);
+                player.timeElapsed = player.timeElapsed >= PlayerController.limit ? 0 : player.timeElapsed;
+            }
             gameObject.SetActive(false);
 
 

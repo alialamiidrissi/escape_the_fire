@@ -21,11 +21,10 @@ public class HealthBarController : MonoBehaviour
 
     void Start()
     {
-     healthWidth = (134 * Screen.width) / 1061;
+     healthWidth = (175 * Screen.width) / 1061;
      healthHeight = 22 * Screen.height / 597;
-     initialHealthWidth= (134 * Screen.width) / 1061;
-
-        healthMarginLeft = 853 * Screen.width / 1061;
+     initialHealthWidth= (175 * Screen.width) / 1061;
+     healthMarginLeft = 853 * Screen.width / 1061;
      healthMarginTop = 30 * Screen.height / 597;
 
      frameWidth = 217 * Screen.width / 1061;
@@ -37,7 +36,7 @@ public class HealthBarController : MonoBehaviour
     }
     void OnGUI()
     {
-
+    
         GUI.DrawTexture(new Rect(frameMarginLeft, frameMarginTop, frameMarginLeft + frameWidth, frameMarginTop + frameHeight), backgroundTexture, ScaleMode.ScaleToFit, true, 0);
 
         GUI.DrawTexture(new Rect(healthMarginLeft, healthMarginTop, healthWidth, healthHeight), foregroundTexture, ScaleMode.ScaleAndCrop, true, 0);

@@ -19,12 +19,12 @@ public class Activator : MonoBehaviour {
         }
         startTime = Time.time;
         startActiveTime = -1;
-        toBlink = player.HitCount > 0 ? 0 : 1;
+        toBlink = player.HitCount > 0 ? 1 : 0;
     }
 	
 	// Update is called once per frame
 	void Update () {
-        toBlink = player.HitCount > 0 ? 0 : 1;
+        toBlink = player.HitCount > 0 ? 1 : 0;
         childs[Math.Abs(toBlink - 1)].SetActive(false);
         if (toBlink == 0)
             childs[toBlink].SetActive(true);

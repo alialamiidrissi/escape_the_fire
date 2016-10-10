@@ -26,7 +26,7 @@ public class Blink : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         float timeAc = Time.time;
-        toBlink = player.HitCount > 0 ? 0 : 1;
+        toBlink = player.HitCount > 0 ? 1 : 0;
         childs[Math.Abs(toBlink - 1)].SetActive(false);
         if (timeAc-startTime > 0.2)
         {

@@ -26,8 +26,12 @@ public class ObstacleGeneratorAlt : MonoBehaviour
         GameObject obstacle;
         float timeA = Time.time - startTime;
         int index = Utilities.choose(Probabiltydistribution);
-        if((index == 0 || index == 1 && timeA < 15f) )
+        if(((index == 0 || index == 1) && timeA < 12f) || PlateformGenerator.simple)
             index = chooseSimple();
+        if (index == 0 || index == 1)
+            CoinGenerator.generateHit = true;
+        else
+            CoinGenerator.generateHit = false;
         obstacle = objectPools[index].getObject();
         obstacle.transform.position = new Vector3(pos.x, obstacle.transform.position.y, obstacle.transform.position.z);
         obstacle.SetActive(true);
