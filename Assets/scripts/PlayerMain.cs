@@ -22,6 +22,7 @@ public class PlayerMain : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        startTutorial();
         if (myAnim.enabled)
         {   if(Input.GetKey(KeyCode.A))
                 hitActive = updatehitCount();
@@ -40,9 +41,10 @@ public class PlayerMain : MonoBehaviour {
             float diff = Time.time - startTime;
             if (Input.GetKeyDown(KeyCode.UpArrow))
                 startTime = Time.time;
-            if (Input.GetKeyDown(KeyCode.DownArrow) && diff < 1.75)
-                startTime = Time.time - 1.75f;
+            if (Input.GetKeyDown(KeyCode.DownArrow) && diff < 1.5)
+                startTime = Time.time - 1.5f;
             bool jump = diff < 2;
+            myAnim.SetBool("downPressed", Input.GetKey(KeyCode.DownArrow));
             myAnim.SetBool("onGround", !jump );
             myAnim.SetBool("slide", Input.GetKey(KeyCode.DownArrow)&& !jump);
             myAnim.SetBool("attack", Input.GetKey(KeyCode.A)&& hitActive);

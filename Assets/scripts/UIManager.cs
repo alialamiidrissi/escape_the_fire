@@ -35,6 +35,7 @@ public class UIManager : MonoBehaviour {
     {
         Time.timeScale = 1f;
         pauseMenu.SetActive(false);
+        paused = false;
     }
 
 }

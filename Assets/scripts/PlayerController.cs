@@ -90,6 +90,7 @@ public class PlayerController : MonoBehaviour
             updated = updatehitCount();
         attack = Input.GetKey(KeyCode.A) && updated;
         UpdateCollider();
+        myAnimator.SetBool("downPressed", Input.GetKeyDown(KeyCode.DownArrow));
         myAnimator.SetFloat("speed", rb.velocity.x);
         myAnimator.SetBool("onGround", isOnGround && isOnGround);
         myAnimator.SetBool("slide", slide);
